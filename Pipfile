@@ -1,0 +1,29 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+pyroute2 = "*"
+handler = "*"
+fluent = "*"
+loguru = "*"
+#httplib = "*"
+httplib2 = "*"
+fastapi = "*"
+urllib3 = "*"
+netifaces = "*"
+uvicorn = "*"
+errno = "*"
+wpa-supplicant = "*"
+wifi = "*"
+
+
+[requires]
+python_version = "3.7"
+
+[scripts]
+app = "uvicorn --host 0.0.0.0 --port 3000 --log-level debug rede.spider:app"
+dev = "uvicorn --host $SPIDER_HOST --port $SPIDER_PORT --log-level $SPIDER_LOG $SPIDER_APP --reload"
